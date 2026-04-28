@@ -113,8 +113,75 @@ export function Home() {
             </button>
           </div>
           {selectedActivity === "GameJam" ? (
-             <div className="w-full aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/20" style={containerStyle}>
-                <iframe srcDoc={`<style>body{margin:0;overflow:hidden;background:#83a3ca;}canvas{display:block;background:#70c5ce;width:100%;height:100%;}</style><canvas id="g"></canvas><script>const c=document.getElementById("g"),x=c.getContext("2d");c.width=400;c.height=400;let b={x:60,y:180,v:0,g:0.18},p=[],f=0,s=0;function d(){x.fillStyle="#70c5ce";x.fillRect(0,0,400,400);b.v+=b.g;b.y+=b.v;x.fillStyle="#000";x.fillRect(b.x,b.y,24,24);if(f%100==0)p.push({x:400,h:Math.random()*150+50});p.forEach((k,i)=>{k.x-=1.6;x.fillStyle="#7B8CC1";x.fillRect(k.x,0,45,k.h);x.fillRect(k.x,k.h+120,45,400);if(k.x<-50){p.splice(i,1);s++}if(b.x+24>k.x&&b.x<k.x+45&&(b.y<k.h||b.y+24>k.h+120))location.reload()});if(b.y>400||b.y<0)location.reload();x.fillStyle="rgba(0,0,0,0.5)";x.font="bold 20px sans-serif";x.fillText("Score: "+s,20,40);f++;requestAnimationFrame(d)}window.addEventListener("mousedown",()=>b.v=-4.2);d();</script>`} className="w-full h-full border-none" />
+             <div className="w-full aspect-square rounded-[2.5rem] overflow-hidden shadow-2xl border-[3px] border-black bg-black">
+                <iframe
+                  srcDoc={`
+                    <style>
+                      body{margin:0;overflow:hidden;background:#70c5ce;font-family:sans-serif;}
+                      canvas{display:block;width:100%;height:100%;}
+                      #btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:15px 30px;background:#fff;border:2px solid #000;border-radius:12px;font-weight:bold;display:none;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);}
+                    </style>
+                    <canvas id="g"></canvas>
+                    <button id="btn" onclick="init()">RETRY</button>
+                    <script>
+                      const c=document.getElementById("g"),x=c.getContext("2d"),btn=document.getElementById("btn");
+                      let b,p,f,s,ga;
+                      c.width=400;c.height=400;
+
+                      function init(){
+                        b={x:60,y:180,v:0,g:0.22,r:12};p=[];f=0;s=0;ga=true;btn.style.display='none';d();
+                      }
+
+                      function d(){
+                        if(!ga) return;
+                        x.fillStyle="#70c5ce";x.fillRect(0,0,400,400);
+
+                        b.v+=b.g;b.y+=b.v;
+
+                        x.fillStyle="#FFD700";x.beginPath();x.arc(b.x,b.y,b.r,0,Math.PI*2);x.fill();
+                        x.strokeStyle="#000";x.lineWidth=2;x.stroke();
+                        x.fillStyle="#000";x.beginPath();x.arc(b.x+5,b.y-4,2,0,Math.PI*2);x.fill();
+                        x.fillStyle="#FF8C00";x.beginPath();x.moveTo(b.x+10,b.y);x.lineTo(b.x+18,b.y+3);x.lineTo(b.x+10,b.y+6);x.fill();x.stroke();
+
+                        if(f%90==0)p.push({x:400,h:Math.random()*160+40});
+
+                        p.forEach((k,i)=>{
+                          k.x-=2;
+                          x.lineWidth=2;
+                          x.strokeStyle="#000";
+                          x.fillStyle="#7B8CC1";
+
+                          const radius = 10;
+                          // Rounded Top Pillar
+                          x.beginPath();
+                          x.roundRect(k.x, -20, 45, k.h + 20, [0, 0, radius, radius]);
+                          x.fill();
+                          x.stroke();
+
+                          // Rounded Bottom Pillar
+                          x.beginPath();
+                          x.roundRect(k.x, k.h+130, 45, 400, [radius, radius, 0, 0]);
+                          x.fill();
+                          x.stroke();
+
+                          if(k.x<-50){p.splice(i,1);s++}
+                          if(b.x+10>k.x&&b.x-10<k.x+45&&(b.y-10<k.h||b.y+10>k.h+130)){ga=false;btn.style.display='block'}
+                        });
+
+                        if(b.y>400||b.y<0){ga=false;btn.style.display='block'}
+
+                        x.fillStyle="#000";x.font="bold 20px sans-serif";
+                        x.fillText("SCORE: "+s,20,40);
+                        f++;
+                        if(ga) requestAnimationFrame(d);
+                      }
+
+                      window.addEventListener("mousedown",()=>{if(ga)b.v=-4.5});
+                      init();
+                    </script>
+                  `}
+                  className="w-full h-full border-none"
+                />
              </div>
           ) : (
             <div className="space-y-4">
@@ -148,7 +215,6 @@ export function Home() {
         <div className="rounded-[2.5rem] p-6 shadow-xl border border-white/10" style={containerStyle}>
           <h3 className="text-lg mb-4 text-slate-900 font-bold tracking-tight">Your Progress</h3>
           <div className="w-full aspect-[16/9] rounded-[1.8rem] overflow-hidden shadow-md border border-white/20 bg-white/20">
-            {/* Updated with graph.jpg */}
             <img src="/graph.jpg" alt="Stats Graph" className="w-full h-full object-contain" />
           </div>
         </div>
