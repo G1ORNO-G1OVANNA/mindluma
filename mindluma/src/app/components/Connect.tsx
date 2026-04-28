@@ -25,34 +25,44 @@ export function Connect() {
 
   const profiles = [
     {
-      name: "Dr. Sarah Mitchell",
+      name: "Dr. Pooja Tiwari",
       experience: 8,
+      age: 34,
+      gender: "Female",
       specialty: "Wellness Coach",
-      image: "https://images.unsplash.com/photo-1733685372864-5e4f02729703?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3ZWxsbmVzcyUyMGNvYWNoJTIwcG9ydHJhaXQlMjB3b21hbnxlbnwxfHx8fDE3NzUwNjM0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: "https://static.vecteezy.com/system/resources/thumbnails/042/970/523/small/ai-generated-middle-aged-indian-female-doctor-in-blue-scrubs-smiling-looking-in-camera-woman-medic-professional-hospital-physician-confident-practitioner-or-surgeon-at-work-blurred-background-photo.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjB3ZWxsbmVzcyUyMGNvYWNoJTIwcG9ydHJhaXQlMjB3b21hbnxlbnwxfHx8fDE3NzUwNjM0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      name: "James Rodriguez",
+      name: "Dr. Manish Shah",
       experience: 5,
+      age: 31,
+      gender: "Male",
       specialty: "Therapist",
-      image: "https://images.unsplash.com/photo-1600896997793-b8ed3459a17f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGVyYXBpc3QlMjBwb3J0cmFpdCUyMG1hbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzUwNjM0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: "https://media.easy-peasy.ai/fb97cb03-6b72-4b00-ac27-f2c1ecd44e98/42bde7f4-8e1c-4205-bffe-5a23feae468a.png?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0aGVyYXBpc3QlMjBwb3J0cmFpdCUyMG1hbiUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzUwNjM0NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      name: "Emily Chen",
+      name: "Dr. Anjali Desai",
       experience: 6,
+      age: 29,
+      gender: "Female",
       specialty: "Meditation Guide",
-      image: "https://images.unsplash.com/photo-1685342787114-c608f8240187?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwY29hY2glMjBwb3J0cmFpdCUyMGFzaWFufGVufDF8fHx8MTc3NTA2MzQ2M3ww&ixlib=rb-4.1.0&q=80&w=1080"
+      image: "https://txcdn-prod-a1art.xiaopiu.com/assets/application/app_1915261421550190594/form/1e288c19-9671-4fcf-9812-9290c9feafff.jpg?crop=entropy&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWRpdGF0aW9uJTIwY29hY2glMjBwb3J0cmFpdCUyMGFzaWFufGVufDF8fHx8MTc3NTA2MzQ2M3ww&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      name: "Michael Anderson",
+      name: "Dr. Ryan Gostling",
       experience: 7,
+      age: 32,
+      gender: "Male",
       specialty: "Yoga Instructor",
-      image: "https://images.unsplash.com/photo-1581423880338-b9e4f9718df6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwaW5zdHJ1Y3RvciUyMHdvbWFuJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzc1MDEzMzY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: "https://people.com/thmb/M2MenwUQddbvtDObvF0uXXsJEd4=/4000x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(749x0:751x2)/Ryan-Gosling-Trailer-for-Project-Hail-Mary-063025-1-ae0a19bbc0d74f59928c45959f6176d2.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b2dhJTIwaW5zdHJ1Y3RvciUyMHdvbWFuJTIwcG9ydHJhaXR8ZW58MXx8fHwxNzc1MDEzMzY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
     },
     {
-      name: "Isabella Martinez",
+      name: "Dr. Priya Sharma",
       experience: 4,
+      age: 28,
+      gender: "Female",
       specialty: "Fitness Trainer",
-      image: "https://images.unsplash.com/photo-1614007011277-c03a6e6915c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhaW5lciUyMHBvcnRyYWl0JTIwaGlzcGFuaWMlMjB3b21hbnxlbnwxfHx8fDE3NzUwNjM0NjV8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: "https://thumbs.dreamstime.com/b/beautiful-brunette-indian-young-doctor-woman-11788357.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaXRuZXNzJTIwdHJhaW5lciUyMHBvcnRyYWl0JTIwaGlzcGFuaWMlMjB3b21hbnxlbnwxfHx8fDE3NzUwNjM0NjV8MA&ixlib=rb-4.1.0&q=80&w=1080"
     },
   ];
 
@@ -81,6 +91,12 @@ export function Connect() {
             <div className="rounded-[1.5rem] p-5 shadow-md" style={accentGradient}>
               <h3 className="text-xl font-bold text-black">{expert?.name}</h3>
               <p className="text-black/80 font-medium">{expert?.specialty}</p>
+
+              {/* Added Age and Gender display */}
+              <p className="text-black/70 text-sm font-semibold mt-1 uppercase tracking-tight">
+                {expert?.gender} • {expert?.age} Years Old
+              </p>
+
               <div className="flex items-center gap-1 mt-2 text-black">
                 <Star size={16} fill="currentColor" />
                 <Star size={16} fill="currentColor" />
@@ -133,7 +149,11 @@ export function Connect() {
                 style={accentGradient}
               >
                 <h3 className="text-base font-bold text-black leading-tight">{profile.name}</h3>
-                <p className="text-[10px] text-black/70 mt-1 uppercase tracking-widest font-bold">
+                {/* Added Age and Gender display in list */}
+                <p className="text-[10px] text-black font-bold uppercase tracking-tight opacity-90">
+                   {profile.gender} • {profile.age} yrs
+                </p>
+                <p className="text-[10px] text-black/70 mt-0.5 uppercase tracking-widest font-bold">
                   {profile.experience} years exp.
                 </p>
               </div>
