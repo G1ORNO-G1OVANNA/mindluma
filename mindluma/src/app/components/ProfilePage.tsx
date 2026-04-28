@@ -33,22 +33,22 @@ export function ProfilePage() {
               style={accentGradient}
             >
               <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
+                src="https://img.freepik.com/premium-photo/face-smiling-indian-man_130568-534.jpg?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400"
                 alt="Profile"
                 className="w-full h-full object-cover rounded-[2.3rem]"
               />
             </div>
           </div>
-          <h2 className="text-2xl font-semibold text-slate-900">Jane Doe</h2>
+          <h2 className="text-2xl font-semibold text-slate-900">Tilak Mehta</h2>
           <p className="text-slate-600 font-medium">MindLuma Customer</p>
         </div>
 
         {/* Profile Details */}
         <div className="rounded-[2.5rem] p-6 shadow-xl space-y-5" style={containerStyle}>
           {[
-            { Icon: Mail, label: "Email", value: "jane.doe@mindluma.com" },
-            { Icon: Phone, label: "Phone", value: "+1 (555) 123-4567" },
-            { Icon: MapPin, label: "Location", value: "San Francisco, CA" },
+            { Icon: Mail, label: "Email", value: "tilak.mehta@mindluma.com" },
+            { Icon: Phone, label: "Phone", value: "+91 5551234567" },
+            { Icon: MapPin, label: "Location", value: "Mumbai, Maharashtra" },
             { Icon: Calendar, label: "Member Since", value: "January 2024" }
           ].map((item, i) => (
             <div key={i} className="flex items-center gap-4">
